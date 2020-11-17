@@ -1,0 +1,78 @@
+
+
+
+  <main class="container">
+    
+    <div class="row justify-content-center">
+
+      <div class="col-md-8">
+
+        <h1>Welcome to {{title}}!</h1><br>
+
+        <form class="form-group row " action="/" method="POST">
+
+          <div class="form-group col-sm-3 col-md-3">
+            <select name="option" class="form-control">
+              <option value="name">Name</option>
+              <option value="category">Category</option>
+            </select>
+          </div>
+
+          <div class="form-group col-sm-7 col-md-8">
+            <input type="text" placeholder="Find the best professionals with us" class="form-control" id="search" name="username">
+          </div>
+
+          <div class="form-group col-sm-2 col-md-1">
+
+            <button type="submit" class="btn btn-base">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="feather feather-search">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </button>
+
+          </div>
+
+        </form>
+      </div>
+
+    </div>
+
+
+    
+    {{#if users}}
+
+      <div class="row justify-content-center">
+        <div class="col-md-8 shadow card imglist">
+          <table class="table widget-26">
+            <tbody>
+      {{#each users}}
+             <tr>
+                <td>
+                  <div class="widget-26-job-emp-img">
+                    <img src="{{profileImg}}" alt="{{name}}" />
+                  </div>
+                </td>
+                <td>
+                  <div class="widget-26-job-title">
+                    <a href="/{{username}}">{{name}}</a>
+                    <p class="text-muted"><small>{{username}}</small></p>
+                  </div>
+                </td>
+              </tr>
+      {{/each}}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    {{/if }}
+    {{#if message}}
+
+        <p class="text-danger">{{message}}</p>
+
+    {{/if }}
+
+
+  </main>

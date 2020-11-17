@@ -1,0 +1,208 @@
+body {
+  background-color: #eeeded ;
+}
+
+h1, h2, h3, span {
+  font-weight: bold;
+}
+
+.navbar {
+  margin-bottom: 40px;
+}
+
+.navbar img {
+  height: 40px;
+}
+
+#errorMsg {
+  background-color: red;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 5px;
+}
+
+.imglist{
+  margin-top: 15px;
+  margin-left: 10px;
+}
+.imglist img {
+  width: 50px;
+  // height: 130px;
+  object-fit: cover;
+  margin: 0px 50px 20px 50px
+}
+.imglist h4  {
+  margin-top: 10px;
+  margin-right: 20px;
+}
+.imglist p {
+  margin-top: 12px;
+}
+
+#errorMsg {
+  background-color: red;
+  color: white;
+  font-weight: 400;
+  text-align: center;
+  padding: 10px 0;
+  margin-top: 5px;
+}
+
+/* Profile page */
+
+.profile .card img {
+  // width: 100%;
+  height: 130px;
+  object-fit: cover;
+} 
+
+.profile .card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color:#fdfdfd;
+    background-clip: border-box;
+    border: 0 solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.15) !important;
+
+}
+
+.profile h6 span {
+  vertical-align: bottom;
+}
+
+.profile .card-deck {
+  margin-right: 0;
+  margin-left: 0;
+}
+
+.profile a {
+  color: black;
+}
+
+.profile a:hover {
+  text-decoration: none;
+  color: black;
+}
+
+.profile .card-body {
+    flex: 1 1 auto;
+    min-height: 1px;
+    padding: 1rem;
+}
+
+.profileinfo {
+  min-height: 280px;
+  max-height: 280px;
+}
+
+.descriptioncard{
+  min-height: 280px;
+  max-height: 280px;
+}
+
+.descriptioncardscroll{
+  //display: flex;
+ // width: 100%;
+  min-width: 100px;
+  margin-left: 20px;
+  max-height: 190px;
+  overflow-y: scroll;
+}
+
+.listprojectscard {
+  width: 100%;
+  min-height: 280px;
+  max-height: 280px;
+}
+.listprojectscardscroll{
+  max-height: 186px;
+  min-height: 186px;
+  overflow-y: scroll;
+}
+
+.addbutton {
+  font-size: 0.25rem;
+}
+
+.listprojects {
+  max-height: 100px;
+  overflow: hidden;
+}
+
+.lineprojects {
+  margin-top: 50px;
+  min-height: 390px;
+  max-height: 390px;
+  overflow-y: scroll;
+} 
+
+.projectcard {
+  margin-bottom: 50px;
+  margin-right: 60px;
+  margin-left: 80px;
+  width: 300px;
+}
+
+iframe {
+  margin-top: 20px;
+}
+
+.cardlink {
+  margin-top: 10px;
+}
+/* Dashboard page */
+
+.loader {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%)
+}
+
+.loader strong {
+  margin-right: 50px;
+}
+
+.running .loader {
+  display: none !important;
+}
+
+.dashboard {
+  opacity: 0;
+}
+
+.running .dashboard {
+  opacity: 1;
+}
+
+.dashboard canvas {
+  max-height: 200px !important;
+}
+
+.dashboard .form-group {
+  margin-bottom: 10px;
+}
+
+.dashboarad aside input {
+  height: 35px !important;
+}
+
+.dashboard #jobs-list-container ul {
+  list-style: none;
+  padding: 0
+}
+
+.dashboard #jobs-list-container .card-body {
+  padding: 10px;
+}
+
+.dashboard #jobs-list-container .card-body small {
+  margin-left: 10%;
+}
+

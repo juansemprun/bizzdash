@@ -1,0 +1,148 @@
+   
+
+    <div class="embed-responsive embed-responsive-21by9">
+        <iframe class="embed-responsive-item" src="{{video}}"></iframe>
+    </div>
+                    <div class="card-body">
+            <h5 class="card-title">{{name}}</h5>
+            <p class="card-text">{{description}}
+            </p>
+
+            <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#details{{id}}">
+                See Details
+            </button>
+
+                </div>
+
+ 
+
+
+{{!-- PROJECTS DETAILSMODAL --}}
+
+
+<div class="modal fade bd-example-modal-lg" id="details{{id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">PROJECT DETAILS</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+          {{!-- MODAL BODY --}}
+        
+    <h5 class="card-title">{{name}}</h5>
+
+    <div class="embed-responsive embed-responsive-21by9">
+        <iframe class="embed-responsive-item" src="{{video}}"></iframe>
+    </div>
+
+    <p class="card-text" style="margin-top: 20px;">{{description}}
+            </p>
+
+    <hr>
+
+    <a href="{{links.gitHub}}" target="_blank">
+                    <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                        <h6 class="mb-0">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                class="feather feather-github mr-2 icon-inline">
+                                <path
+                                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+                                </path>
+                            </svg>
+                            <span>Github</span>
+                        </h6>
+                        <span class="text-secondary">{{links.gitHub}}</span>
+                    </li>
+                   </a> 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{!-- EDIT MODAL --}}
+
+<div class="modal fade bd-example-modal-lg" id="edit{{id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">PROJECT EDIT</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+ {{!-- MODAL BODY --}}
+        
+      <div class="modal-body">
+
+
+            <form action="/updateproject/{{id}}" method="POST"  enctype="multipart/form-data">
+                <div class="form-group">
+                    <label for="name-input">Project Name</label>
+                    <input name="name" type="text" placeholder="{{name}}" value="{{name}}" class="form-control" id="name-input">
+                </div>
+                <div class="form-group">
+                    <label for="description-input">Description</label>
+                    <input name="description" type="text" placeholder="{{description}}" value="{{description}}" class="form-control" id="description-input">
+                </div>
+                <div class="form-group">
+                  <label for="link-github">GitHub</label>
+                  <input name="github" type="text" class="form-control" id="link-github" value="{{links.gitHub}}">
+                </div>
+                <input type="text" name="nameInput" placeholder="{{video}}" value="{{video}}"><br><br>
+                <input type="file" name="videoInput" value="{{video}}"><br><br>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-outline-dark">Confirm changes</button>
+            </div>
+            </form>
+
+
+      
+    </div>
+  </div>
+</div>
+
+
+{{!-- Modal DELETE PROJECT --}}
+
+<div class="modal fade bd-example-modal-lg" id="deleteproject{{id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">DELETE PROJECT? </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+
+ {{!-- MODAL BODY --}}
+        
+      <div class="modal-body">
+
+
+            <form action="/deleteproject/{{id}}" method="POST"  enctype="multipart/form-data">
+              <h5>Are you sure to delete {{name}} project? </h5>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="submit" class="btn btn-outline-dark">Confirm changes</button>
+            </div>
+            </form>
+
+
+      
+    </div>
+  </div>
+</div>

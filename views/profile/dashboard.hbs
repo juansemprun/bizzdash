@@ -1,0 +1,137 @@
+
+
+<div class="container">
+    <div class="d-flex align-items-center loader">
+        <strong>Loading info...</strong>
+        <div class="spinner-border ml-auto" role="status" aria-hidden="true"></div>
+    </div>
+    
+    <div class="row dashboard">
+
+        <h1 class="col-md-9 h3 mb-4">WELCOME TO YOUR CUSTOMIZED DASHBOARD</h1>
+
+        <form>
+            
+            <div class="form-group">
+
+                <select name="categorySelect" id="categoriesSelect">
+
+            {{#each user.experience}}
+
+                    <option value="{{this}}">{{this}}</option>
+
+            {{/each}}
+
+                </select>
+                
+            </div>
+        </form>
+
+        <div class="col-md-9">
+            <div class="row">
+                <div class="col-md-6">
+                
+                    <!-- Bar Chart -->
+                    <div class="card shadow mb-4">
+                
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-dark">Salary</h6>
+                        </div>
+                
+                        <div class="card-body">
+                
+                            <canvas id="salaryChart"></canvas>
+
+                            <hr>
+                            <small class="text-muted">Historial average salary</small>
+                        </div>
+                    </div>
+                
+                </div>
+                
+                <div class="col-md-6">
+                
+                    <!-- Area Chart -->
+                    <div class="card shadow mb-4">
+                
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-dark">Jobs by location</h6>
+                        </div>
+                
+                        <div class="card-body" id="jobsByLocationContainer">
+                
+                            <canvas id="jobsByLocationChart"></canvas>
+                
+                            <hr>
+                            <small class="text-muted">Number of jobs advertised</small>
+                
+                        </div>
+                    </div>
+                
+                </div>
+                
+                <!-- Pie Chart -->
+                <div class="col-md-6">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-dark">Current distribution of salaries</h6>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body" id="histogramSalaryContainer">
+                
+                            <canvas id="histogramSalaryChart"></canvas>
+                
+                            <hr>
+                            <small class="text-muted">Number of vacancies with a salary in that range.</small>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Donut Chart -->
+                <div class="col-md-6">
+                    <div class="card shadow mb-4">
+                        <!-- Card Header - Dropdown -->
+                        <div class="card-header py-3">
+                            <h6 class="m-0 font-weight-bold text-dark">Top companies for developers</h6>
+                        </div>
+                        <!-- Card Body -->
+                        <div class="card-body" id="companiesContainer">
+                
+                            <canvas id="companiesChart"></canvas>
+                
+                            <hr>
+                            <small class="text-muted">Top five companies by number of vacancies.</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <aside class="col-md-3" >
+            
+            <form>
+                <div class="form-group">
+        
+                    <input type="text" id="searchJob" class="form-control" placeholder="Search job offers">
+                    <small class="form-text text-muted">Fullstack, javascript, react, node...</small>
+                </div>
+            </form>
+            <div class="row">
+                <div class="col-md-12" id="jobs-list-container">
+
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+</div>
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+<script src="/javascripts/api/api-handler.js"></script>
+<script src="/javascripts/api/api-charts.js"></script>
+<script src="/javascripts/api/api-index.js"></script>
+
