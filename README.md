@@ -1,6 +1,6 @@
 # Bizzdash
 
-Create your own business dashboard. Second project in **Ironhack Madrid 20-08**.
+Second project in **Ironhack Madrid 20-08**.
 
 ## Getting Started
 
@@ -11,6 +11,7 @@ Click [here](https://bizzdash.herokuapp.com/) to checkout the project and [here]
  - HTML
  - CSS (SASS)
  - JavaScript ES6
+ - Handlebars
  - Node
  - Express
 
