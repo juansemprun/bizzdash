@@ -17,7 +17,7 @@ Click [here](https://bizzdash.herokuapp.com/) to checkout the project and [here]
 
 ## Authors
 
-- [Gonzalo Martin Cano](https://github.com/Anabm90) 
+- [Gonzalo Martin Cano](https://github.com/GonzaloMartinCano) 
 - [Juan Daniel Semprún Rico](https://github.com/juansemprun)
 
 ## Version
